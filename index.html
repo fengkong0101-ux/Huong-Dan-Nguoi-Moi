@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Hướng dẫn cài đặt & sử dụng - Onboarding (Cập nhật 2)</title>
+<style>
+  :root{
+    --bg:#f5f7fb; --card:#fff; --accent:#0b5ed7; --muted:#6c757d;
+    --border:#dfe6ee;
+  }
+
+  body{font-family: Arial, Helvetica, sans-serif; margin:0; background:var(--bg); color:#222}
+  .wrap{max-width:1100px;margin:22px auto;padding:18px;background:var(--card);box-shadow:0 6px 18px rgba(10,20,40,0.06);border-radius:8px}
+  h1{color:var(--accent);margin:4px 0 12px;text-align:center}
+  .alert{background:#fff3cd;border-left:6px solid #ffc107;padding:10px;border-radius:6px;margin-bottom:12px}
+  .tabs {width:100%}
+  .tab-buttons{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+  .tab-buttons button{background:transparent;border:1px solid var(--border);padding:10px 14px;border-radius:6px;cursor:pointer}
+  .tab-buttons button.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+  .tab-content{background:#fbfdff;padding:14px;border:1px solid var(--border);border-radius:6px;min-height:420px}
+  .section{margin-bottom:16px;padding:12px;border-radius:6px;background:#fff}
+  h2{margin:6px 0 8px;color:#123}
+  h3{margin:6px 0 4px;color:#123}
+  p.small{color:var(--muted);margin:6px 0}
+  img.demo{max-width:100%;border-radius:6px;border:1px solid #e6eef6;margin:6px 0}
+  figure{margin:10px 0}
+  figcaption{font-size:0.9rem;color:var(--muted);margin-top:4px}
+  pre{background:#f1f6fb;padding:10px;border-radius:6px;overflow:auto}
+  ul{margin-left:18px}
+  ol{margin-left:18px}
+  .subtabs{display:flex;gap:8px;margin-bottom:10px}
+  .subtabs button{padding:8px 10px;border:1px solid var(--border);cursor:pointer;background:transparent;border-radius:6px}
+  .subtabs button.on{background:#eef6ff;border-color:#cfe4ff}
+
+  /* responsive */
+  @media (max-width:880px){
+    img.demo{width:100%;height:auto}
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>HƯỚNG DẪN CHI TIẾT: CÀI ĐẶT & SỬ DỤNG ỨNG DỤNG LÀM VIỆC TẠI NHÀ</h1>
+
+    <div class="alert">
+      ⚠️ Hoàn thành mọi bước ít nhất <strong>1 ngày</strong> trước khi bắt đầu làm việc. Chuẩn bị 01 Gmail đã đăng nhập trên máy tính.
+    </div>
+
+    <div class="tabs">
+      <div class="tab-buttons" role="tablist" aria-label="Chọn mục hướng dẫn">
+        <button id="tab-main" class="active" onclick="openTab('tab-main','main')">Bắt buộc cài đặt</button>
+        <button id="tab-tools" onclick="openTab('tab-tools','tools')">Công cụ hỗ trợ</button>
+        <button id="tab-info" onclick="openTab('tab-info','info')">Hướng dẫn & Lưu ý</button>
+      </div>
+
+      <div id="main" class="tab-content" style="display:block">
+        <div class="subtabs" aria-hidden="false">
+          <button id="sub-ss" class="on" onclick="openSubMain('ss')">Shadowsocks (VPN)</button>
+          <button id="sub-wf" onclick="openSubMain('wf')">Workfolio</button>
+          <button id="sub-zoom" onclick="openSubMain('zoom')">Zoom</button>
+        </div>
+
+        <div id="ss" class="section" style="display:block">
+          <h2>Shadowsocks — Chuyển IP (Bắt buộc)</h2>
+          <p class="small">Bật Shadowsocks trước khi truy cập các trang hậu đài. Hậu đài chỉ cho phép IP từ Shadowsocks.</p>
+
+          <h3>1. Tải & cài đặt</h3>
+          <ul>
+            <li>Windows: <a href="https://www.mediafire.com/file/lszxcilxnlsdmzs/Shadowsocks_%25283%2529_001.rar/file" target="_blank">Download Shadowsocks (Windows)</a></li>
+            <li>Mac: <a href="https://www.mediafire.com/file/mu009hf3s96fyii/ShadowsocksX-NG_%25281%2529.dmg/file" target="_blank">Download ShadowsocksX-NG (Mac)</a></li>
+          </ul>
+          <img class="demo" src="https://i.ibb.co/ccT8LKb7/shadowsocks-1.jpg" alt="Mở Shadowsocks">
+          <figcaption>Hình: Mở ứng dụng Shadowsocks sau khi cài đặt.</figcaption>
+
+          <h3>2. Thêm server & kết nối</h3>
+          <ol>
+            <li>Giải nén (Windows) hoặc mở .dmg (Mac) và cài.</li>
+            <li>Mở ứng dụng → nhấp chuột phải vào biểu tượng → chọn <strong>Edit Servers</strong>.</li>
+            <img class="demo" src="https://i.ibb.co/M5RHMrjf/shadowsocks-2.jpg" alt="Edit Servers">
+            <figcaption>Hình: Chọn Edit Servers để thêm server mới.</figcaption>
+            <li>Nhập thông tin server của công ty:</li>
+            <pre>IP: 8.220.129.50
+VPN Port: 17643
+VPN Password: bijo4t22cc</pre>
+            <img class="demo" src="https://i.ibb.co/zWzCqxxk/shadowsocks-3.jpg" alt="Nhập server">
+            <figcaption>Hình: Nhập IP / Port / Password.</figcaption>
+            <li>Lưu cấu hình → chọn server vừa thêm → nhấn Connect / Enable.</li>
+            <li>Chờ thông báo kết nối thành công.</li>
+            <img class="demo" src="https://i.ibb.co/yB06gRr0/check-ip-shadowsocks.jpg" alt="Check IP">
+            <figcaption>Hình: Kiểm tra IP hiển thị đúng.</figcaption>
+          </ol>
+
+        </div>
+
+        <div id="wf" class="section" style="display:none">
+          <h2>Workfolio — Điểm danh & quản lý ca</h2>
+          <p class="small">Dùng để đăng nhập, điểm danh lên/ xuống ca, xin off, nhận thông báo ca làm.</p>
+
+          <h3>1. Tải & cài</h3>
+          <p>Truy cập: <a href="https://www.getworkfolio.com/downloads" target="_blank">https://www.getworkfolio.com/downloads</a></p>
+          <ol>
+            <li>Chọn bản phù hợp với Windows hoặc Mac → tải về → cài đặt.</li>
+            <li>Sau khi cài, gửi Gmail bạn dùng cho quản lý để được thêm vào danh sách nhân viên.</li>
+            <li>Khi nhận email mời → mở email → nhấn <strong>Accept</strong>.</li>
+            <img class="demo" src="https://i.ibb.co/KxDH0dzj/getworkfolio-2.jpg" alt="Accept invite Workfolio">
+            <figcaption>Hình: Email mời từ Workfolio — nhấn Accept.</figcaption>
+            <li>Mỗi ngày mở Workfolio → đăng nhập bằng Gmail → điểm danh.</li>
+          </ol>
+
+        </div>
+
+        <div id="zoom" class="section" style="display:none">
+          <h2>Zoom — Quan sát & đào tạo (Bắt buộc)</h2>
+          <p class="small">Zoom dùng để quan sát nhân viên và để nhân viên share màn hình khi làm việc.</p>
+
+          <h3>0. Cài đặt Zoom (nếu chưa có)</h3>
+          <ol>
+            <li>Truy cập <a href="https://zoom.us/download" target="_blank">zoom.us/download</a> → tải Zoom Client for Meetings phù hợp với hệ điều hành.</li>
+            <li>Mở file cài đặt → làm theo hướng dẫn để cài đặt.</li>
+            <li>Sau khi cài, đăng nhập bằng tài khoản Google / SSO nếu cần.</li>
+          </ol>
+
+          <h3>1. Lấy thông tin đăng nhập</h3>
+          <p>Hằng ngày lấy Meeting ID & Pass trong Telegram nhóm: <strong>11楼居家群 - CÔNG VIỆC TẠI NHÀ</strong>.</p>
+          <img class="demo" src="https://i.ibb.co/q3FPR8ZD/th-ng-tin-ng-nh-p-tr-n-tele.png" alt="Thông tin trên Telegram">
+          <figcaption>Hình: Lấy thông tin đăng nhập Zoom từ nhóm Telegram.</figcaption>
+
+          <h3>2. Đăng nhập bằng ID & Pass (ứng dụng Zoom)</h3>
+          <ol>
+            <li>Mở Zoom → chọn <strong>Join</strong>.</li>
+            <li>Nhập <em>Meeting ID</em> → nhấn Join → nhập <em>Passcode</em> → Join.</li>
+            <img class="demo" src="https://i.ibb.co/tw9R2cn9/ng-nh-p-zoom-b-ng-ID-v-pass-1.png" alt="Join Zoom step 1">
+            <figcaption>Hình: Nhập Meeting ID.</figcaption>
+            <img class="demo" src="https://i.ibb.co/MDrJ8KJg/ng-nh-p-zoom-b-ng-ID-v-pass-2.png" alt="Join Zoom step 2">
+            <figcaption>Hình: Nhập Passcode.</figcaption>
+            <img class="demo" src="https://i.ibb.co/JwKM7FSY/ng-nh-p-zoom-b-ng-ID-v-pass-3.png" alt="Join Zoom step 3">
+            <figcaption>Hình: Xác nhận join phòng.</figcaption>
+            <img class="demo" src="https://i.ibb.co/6cv0PXcr/ng-nh-p-b-ng-link.png" alt="Join by link">
+            <figcaption>Hình: Hoặc join trực tiếp bằng link.</figcaption>
+          </ol>
+        </div>
+
+      </div>
+
+      <!-- Tools tab -->
+      <div id="tools" class="tab-content" style="display:none">
+        <div class="subtabs" aria-hidden="false">
+          <button id="tool-snipaste" class="on" onclick="openSubTools('snipaste')">Snipaste</button>
+          <button id="tool-lightshot" onclick="openSubTools('lightshot')">Lightshot</button>
+          <button id="tool-unikey" onclick="openSubTools('unikey')">Unikey / EVKey</button>
+          <button id="tool-ifsc" onclick="openSubTools('ifsc')">IFSC tool</button>
+        </div>
+
+        <div id="snipaste" class="section" style="display:block">
+          <h2>Snipaste — Chụp & ghim ảnh (mạnh)</h2>
+          <ol>
+            <li>Tải: <a href="https://www.snipaste.com/" target="_blank">https://www.snipaste.com/</a></li>
+            <img class="demo" src="https://i.ibb.co/xq61rB8x/t-i-snipaste.png" alt="Snipaste">
+            <figcaption>Hình: Trang chủ Snipaste.</figcaption>
+          </ol>
+        </div>
+
+        <div id="lightshot" class="section" style="display:none">
+          <h2>Lightshot — Chụp nhanh & chia sẻ</h2>
+          <p class="small">Lightshot giúp chụp nhanh, chỉnh nhẹ và chia sẻ link ảnh.</p>
+          <ol>
+            <li>Tải: <a href="https://app.prntscr.com/en/index.html" target="_blank">https://app.prntscr.com/</a></li>
+            <li>Mặc định dùng phím <code>PrtSc</code> để chụp → kéo chọn vùng → edit → Save / Copy / Upload (lấy link).</li>
+          </ol>
+          <img class="demo" src="https://i.ibb.co/yn9kkfcf/lightshot.png" alt="Lightshot trang chủ">
+          <figcaption>Hình: Trang chủ Lightshot.</figcaption>
+        </div>
+
+        <div id="unikey" class="section" style="display:none">
+          <h2>Unikey / EVKey — Bộ gõ & gõ tắt</h2>
+          <p class="small">Unikey / EVKey dùng để gõ tiếng Việt. Nếu cần gõ tắt (text expansion), nên kết hợp với công cụ chuyên dụng (AutoHotkey / PhraseExpress) vì Unikey không có chức năng gõ tắt nâng cao.</p>
+          <h3>1. Tải & cấu hình cơ bản</h3>
+          <ul>
+            <li>Unikey: <a href="https://www.unikey.org/" target="_blank">https://www.unikey.org/</a> — chọn Unicode + bảng mã Telex/VNI tuỳ thói quen.</li>
+            <li>EVKey: <a href="https://evkey.org/" target="_blank">https://evkey.org/</a> — giao diện hiện đại, hỗ trợ nhiều tính năng tiện lợi.</li>
+          </ul>
+          <h3>2. Hướng dẫn gõ tắt</h3>
+          <p class="small">Để gõ tắt trong Unikey, bạn cần Bật tính năng gõ tắt và Soạn bảng gõ tắt trong menu Mở rộng, nhập từ viết tắt và từ đầy đủ vào hộp thoại Macro Definition, rồi lưu lại; sau đó, khi gõ ký tự viết tắt và nhấn phím cách (hoặc phím Shift + cách), Unikey sẽ tự động thay thế bằng từ đầy đủ. .</p>
+          <pre>Ví dụ： h = hello</pre>
+          <p class="small">Các bước chi tiết:</p>
+          <ol>
+            <li>Mở Unikey: Chuột phải vào biểu tượng Unikey (chữ V/E) trên thanh Taskbar và chọn Mở rộng (hoặc nhấn tổ hợp phím <code>Ctrl + Shift + F5</code> để mở giao diện).</li>
+            <li>Bật chức năng gõ tắt:
+Trong hộp thoại Unikey, chọn Mở rộng.
+Tích chọn vào ô Cho phép gõ tắt.
+Nhấn Đóng.
+</li>
+            <li>Tạo bảng gõ tắt (Soạn bảng gõ tắt):
+Chuột phải vào biểu tượng Unikey trên Taskbar, chọn Soạn bảng gõ tắt (hoặc <code>Ctrl + Shift + F6</code> để mở UniKey Toolkit).
+Trong hộp thoại xuất hiện (Macro Definition):
+Nhập ký tự viết tắt (ví dụ: ksrr) vào ô Thay thế.
+Nhập từ/cụm từ đầy đủ (ví dụ: Kiểm Soát Rủi Ro) vào ô Bởi.
+Nhấn Thêm, sau đó nhấn Lưu.
+</li>
+            <li>Sử dụng gõ tắt: Khi soạn thảo, gõ ký tự viết tắt (ví dụ ksrr) và nhấn phím Cách (Spacebar), Unikey sẽ tự động thay thế thành Kiểm Soát Rủi Ro.
+Mẹo: Giữ phím Shift khi gõ phím cách để không thay thế, giữ nguyên ký tự viết tắt. </li>
+          </ol>
+          <p class="small">Ghi chú: tránh dùng một chữ cái đơn lẻ chung (như "h") nếu dễ xung đột; ưu tiên các cụm ký tự ít dùng như ":;h" hoặc thêm ký tự kích hoạt.</p>
+        </div>
+
+        <div id="ifsc" class="section" style="display:none">
+          <h2>IFSC tool — kiểm tra nhanh</h2>
+          <p class="small">Link tải: <a href="https://www.mediafire.com/file/dyhvmrhasinf1dx/IFSC_V1.2.rar/file" target="_blank">IFSC_V1.2.rar</a></p>
+          <p class="small">Để biết cách sử dụng chi tiết, vui lòng liên hệ <strong>Ren</strong> để được hướng dẫn.</p>
+        </div>
+
+      </div>
+
+      <!-- Info tab -->
+      <div id="info" class="tab-content" style="display:none">
+        <div class="section">
+          <h2>Hướng dẫn & Lưu ý chung</h2>
+          <p class="small"><strong>Gợi ý thứ tự làm việc (không cứng nhắc):</strong></p>
+          <ol>
+            <li>Bật Shadowsocks (VPN) → xác nhận IP đúng.</li>
+            <li>Mở Workfolio → điểm danh lên ca.</li>
+            <li>Vào nhóm Telegram <em>11楼居家群 - CÔNG VIỆC TẠI NHÀ</em> để lấy thông tin Zoom.</li>
+            <li>Tham gia Zoom → bật camera & share màn hình.</li>
+            <li>Mở các công cụ hỗ trợ khi cần (Snipaste, Lightshot, Unikey/EVKey, IFSC).</li>
+          </ol>
+
+          <h3>Mẹo & xử lý sự cố</h3>
+          <ul>
+            <li>Nếu IP không chính xác: chụp màn hình lỗi, gửi cho quản lý/IT.</li>
+            <li>Nếu không nhận được email mời Workfolio: kiểm tra spam hoặc báo quản lý.</li>
+            <li>Zoom bị rè: thử dùng tai nghe, kiểm tra mic/camera, kiểm tra đường truyền.</li>
+            <li>Luôn cập nhật phiên bản mới cho ứng dụng để tránh lỗi tương thích.</li>
+          </ul>
+
+          <h3>Quy định nhỏ</h3>
+          <p class="small">Bộ phận Đào tạo có quyền yêu cầu nhân viên bật camera và share màn hình để giám sát & hướng dẫn. Khi được yêu cầu, nhân viên phải tuân thủ để đảm bảo chất lượng công việc.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+<script>
+  function openTab(btnId, contentId){
+    document.querySelectorAll('.tab-buttons button').forEach(b=>b.classList.remove('active'));
+    document.getElementById(btnId).classList.add('active');
+    ['main','tools','info'].forEach(id=>{
+      document.getElementById(id).style.display = (id===contentId)?'block':'none';
+    });
+  }
+
+  function openSubMain(key){
+    ['ss','wf','zoom'].forEach(id=>{
+      document.getElementById(id).style.display = (id===key)?'block':'none';
+    });
+    document.getElementById('sub-ss').classList.toggle('on', key==='ss');
+    document.getElementById('sub-wf').classList.toggle('on', key==='wf');
+    document.getElementById('sub-zoom').classList.toggle('on', key==='zoom');
+  }
+
+  function openSubTools(key){
+    ['snipaste','lightshot','unikey','ifsc'].forEach(id=>{
+      document.getElementById(id).style.display = (id===key)?'block':'none';
+    });
+    document.getElementById('tool-snipaste').classList.toggle('on', key==='snipaste');
+    document.getElementById('tool-lightshot').classList.toggle('on', key==='lightshot');
+    document.getElementById('tool-unikey').classList.toggle('on', key==='unikey');
+    document.getElementById('tool-ifsc').classList.toggle('on', key==='ifsc');
+  }
+
+  document.addEventListener('DOMContentLoaded', function(){
+    openTab('tab-main','main');
+    openSubMain('ss');
+  });
+</script>
+
+</body>
+</html>
